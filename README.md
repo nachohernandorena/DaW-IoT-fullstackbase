@@ -176,6 +176,10 @@ En cada uno de los dispositivos listados existe un boton de 'Eliminar'. Luego se
 
 En cada uno de los dispositivos listados existe un boton de 'Modificar'. Luego se despliega un menú para confirmar dicha accion. Los mismos atributos que se piden al momento del agregado de un dispositivo son editables en esta instancia.
 
+### Refreescar lista de dispositivos 🔄
+
+Sobre la parte inferior, y junto al boton de 'Agregar' dispositivos, se encuentra un boton de 'Refrescar'. El mismo es de utilidad para actualizar los valores de los dispositivos.
+
 ### Frontend 👨🏻‍💻
 
 Completá todos los detalles sobre cómo armaste el frontend, sus interacciones, etc.

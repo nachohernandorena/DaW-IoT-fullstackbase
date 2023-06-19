@@ -156,15 +156,31 @@ En esta sección podés ver los detalles específicos de funcionamiento del cód
 
 <details><summary><b>Mira los detalles de implementación</b></summary><br>
 
-### Agregar un dispositivo
+### Logueo de usuarios 👥
 
-Completá los pasos para agregar un dispositivo desde el cliente web.
+Se realizó una implmentacion de logueo por email y contraseña. Se han agregado dos usuarios en esta etapa. Los mismos son 'admin@admin.com' y la contraseña 'secreto', y el segundo usuario es 'user@user.com' y la contraseña 'secreto'. Queda pendiente la implementacion de alta, baja y modificacion de usuarios.
+El usuario (email) con el cual se loguea se muestra en la pantalla de dispositivos.
 
-### Frontend
+### Agregar un dispositivo ➕
+
+Para agregar un dispositivo basta con clickear sobre el boton "+" en la parte inferior de la página y completar los datos del formulario, finalmente se debe confirmar la acción con el boton de 'agregar', o bien cancelar en caso que no se desee avanzar con el alta de un nuevo dispositivo. Existen tres tipos de dispositivos que se pueden agregar: Luz (dispositivo tipo 1), Cortina (dispositivo tipo 2) y Aire (dispositivo tipo 3).
+- Luz: Tiene un switch o interruptor del tipo ON-OFF
+- Cortina: tiene una barra deslizadora para setear el valor entre 0% y 100%, con intervalos de 10% .
+- Aire: tiene una barra deslizadora para setear la temperatura entre 16 y 30°C, con intervalos de 1°C .
+
+### Eliminar un dispositivo 🗑️
+
+En cada uno de los dispositivos listados existe un boton de 'Eliminar'. Luego se despliega un menú para confirmar dicha accion.
+
+### Modificar un dispositivo 📝
+
+En cada uno de los dispositivos listados existe un boton de 'Modificar'. Luego se despliega un menú para confirmar dicha accion. Los mismos atributos que se piden al momento del agregado de un dispositivo son editables en esta instancia.
+
+### Frontend 👨🏻‍💻
 
 Completá todos los detalles sobre cómo armaste el frontend, sus interacciones, etc.
 
-### Backend
+### Backend 👨🏻‍💻
 
 Completá todos los detalles de funcionamiento sobre el backend, sus interacciones con el cliente web, la base de datos, etc.
 

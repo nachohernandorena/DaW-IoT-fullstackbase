@@ -13,7 +13,11 @@ class Main {
     }
     // Función para agregar un dispositivo nuevo
     addDevice(name, description, type, user_id) {
-        const newDevice = { name, description, type, state: 0, user_id };
+        let state = 0;
+        if (type === "3") {
+            state = 24;
+        }
+        const newDevice = { name, description, type, state, user_id };
         this.framework.addRequest("POST", "http://localhost:8000/devices/", this, newDevice);
     }
     // Función para cambiar el estado de un dispositivo
@@ -46,6 +50,10 @@ class Main {
         const instanceModal = M.Modal.getInstance(modal);
         instanceModal.close();
     }
+    // Función refresh dispositivos
+    refreshDevices() {
+        this.initialQuery();
+    }
     loadGrid(devList) {
         const devbox = document.getElementById("devbox");
         let grid = `<ul class="collection">`;
@@ -71,7 +79,13 @@ class Main {
         // Mostrar el botón logout
         const logbtn = document.getElementById("logout-button");
         logbtn.hidden = false;
-        // Filtrar los dispositivos del usuario "1", para el ejemplo es admin@admin.com. Queda pendiente implementacion para que traiga las vistas de dispositivos dependiendo del usuario que se loguea
+        // Botón refresh
+        const refreshButton = document.getElementById("refresh-button");
+        refreshButton.hidden = false;
+        refreshButton.addEventListener("click", () => {
+            this.refreshDevices();
+        });
+        // Filtrar los dispositivos del usuario "1" admin@admin.com (se puede cambiar por "2" user@user.com), para el ejemplo es admin@admin.com. Queda pendiente implementacion para que traiga las vistas de dispositivos dependiendo del usuario que se loguea
         const currentUserDevices = devList.filter(dev => dev.user_id === 1);
         for (const dev of currentUserDevices) {
             let deviceType = "";
@@ -85,7 +99,7 @@ class Main {
             <div class="switch">
               <label>
                 Off
-                <input id="val_${dev.id}" type="checkbox" ${dev.state ? 'checked' : ''}>
+                <input id="value${dev.id}" type="checkbox" ${dev.state ? 'checked' : ''}>
                 <span class="lever"></span>
                 On
               </label>
@@ -97,8 +111,8 @@ class Main {
                 extraFields = `
             <form action="#">
               <p class="range-field">
-                <input type="range" id="val_${dev.id}" min="0" max="100" step="10" value="${dev.state}">
-                <label for="val_${dev.id}">${dev.state} %</label>
+                <input type="range" id="value${dev.id}" min="0" max="100" step="10" value="${dev.state}">
+                <label for="value${dev.id}">${dev.state} %</label>
               </p>
             </form>`;
             }
@@ -107,33 +121,9 @@ class Main {
                 deviceImage = "static/images/air.png";
                 extraFields = `
             <form action="#">
-              <label>
-                <span class="switch">
-                  <p>
-                    <label>
-                      Off
-                      <input type="checkbox" id="mode_${dev.id}" ${dev.state ? 'checked' : ''}>
-                      <span class="lever"></span>
-                      On
-                    </label>
-                  </p>
-                </span>
-              </label>
-              <p>
-                <label>
-                  <span class="switch">
-                    <label>
-                      Frio 🧊
-                      <input type="checkbox" id="frio_${dev.id}" ${dev.frio ? 'checked' : ''}>
-                      <span class="lever" id="lever_frio_${dev.id}"></span>
-                      Calor 🌞
-                    </label>
-                  </span>
-                </label>
-              </p>
               <p class="range-field">
-                <input type="range" id="val_${dev.id}" min="14" max="30" step="1" value="${dev.state}">
-                <label for="val_${dev.id}">${dev.state} °C</label>
+                <input type="range" id="value${dev.id}" min="14" max="30" step="1" value="${dev.state}">
+                <label for="value${dev.id}">${dev.state} °C</label>
               </p>
             </form>`;
             }
@@ -158,7 +148,7 @@ class Main {
         devbox.innerHTML = grid;
         // Asignar eventos a los elementos creados dinámicamente
         for (let dev of currentUserDevices) {
-            document.getElementById("val_" + dev.id).addEventListener("click", this);
+            document.getElementById("value" + dev.id).addEventListener("click", this);
             document.getElementById("mod-button" + dev.id).addEventListener("click", this);
             document.getElementById("del-button" + dev.id).addEventListener("click", this);
         }
@@ -213,7 +203,7 @@ class Main {
                 else {
                     this.loginUser(email, password).then((loginOK) => {
                         if (loginOK) {
-                            M.toast({ html: "Ingresando..." });
+                            M.toast({ html: "🚪 Ingresando..." });
                             this.initialQuery();
                         }
                         else {
@@ -234,13 +224,13 @@ class Main {
             else {
                 devstate = 0;
             }
-            let devid = parseInt(objEvent.id.replace('val_', ''));
+            let devid = parseInt(objEvent.id.replace('value', ''));
             this.changeState(devid, devstate);
         }
         else if (objEvent.type == "range") {
             // Cambiar el estado del dispositivo según el valor del rango
             devstate = parseInt(objEvent.value);
-            let devid = parseInt(objEvent.id.replace('val_', ''));
+            let devid = parseInt(objEvent.id.replace('value', ''));
             this.changeState(devid, devstate);
         }
         else if (objEvent.id.startsWith("mod-button")) {
@@ -288,7 +278,7 @@ class Main {
             // Obtener el ID del dispositivo a eliminar y eliminarlo
             let devid = +document.getElementById("input-delete-id").value;
             this.deleteDevice(devid);
-            M.toast({ html: '❌ Dispositivo eliminado', classes: 'toast-centered' });
+            M.toast({ html: '🗑️ Dispositivo eliminado', classes: 'toast-centered' });
             this.refreshSPA("delete-modal");
         }
         else if (objEvent.id == "cancel-add") {
@@ -301,7 +291,7 @@ class Main {
             let description = document.getElementById("txt-description").value;
             let type = document.getElementById("select-type").value;
             if (name && description && type) {
-                const user_id = '1'; // Agrega dispositivos del usuario "1", para el ejemplo es admin@admin.com. Queda pendiente implementacion para cargue los dispositivos dependiendo del usuario que se loguea
+                const user_id = '1'; // Agrega dispositivos del usuario "1" admin@admin.com (se puede cambiar por "2" user@user.com), para el ejemplo es admin@admin.com. Queda pendiente implementacion para cargue los dispositivos dependiendo del usuario que se loguea
                 this.addDevice(name, description, type, user_id);
                 M.toast({ html: '👍 Dispositivo agregado', classes: 'toast-centered' });
                 this.refreshSPA("add-modal");

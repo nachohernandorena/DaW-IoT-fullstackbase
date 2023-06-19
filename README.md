@@ -162,9 +162,9 @@ Este proyecto es una Single Page Application (SPA) basada en el template de [mra
 
 La aplicación envía los estados de los dispositivos al servidor y los almacena en una base de datos cada vez que ocurre un cambio. Todos los datos relevantes de los dispositivos, como el ID, nombre, descripción, tipo y estado, también se almacenan en la base de datos.
 
-Los usuarios pueden registrarse y acceder a sus cuentas utilizando sus credenciales de inicio de sesión. Estos datos también se almacenan de forma segura en la base de datos para su posterior autenticación.
+Los usuarios pueden acceder a sus cuentas utilizando sus credenciales de inicio de sesión. Estos datos también se almacenan en la base de datos para su posterior autenticación.
 
-La SPA proporciona una experiencia de usuario fluida y receptiva, permitiendo a los usuarios realizar todas las acciones necesarias para administrar los dispositivos de manera eficiente.
+La SPA proporciona una experiencia de usuario fluida y receptiva, permitiendo a los usuarios realizar todas las acciones necesarias para administrar los dispositivos.
 
 ¡Explora todas las funcionalidades que ofrece esta aplicación!
 

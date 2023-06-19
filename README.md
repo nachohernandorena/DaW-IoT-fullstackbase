@@ -174,7 +174,7 @@ La SPA proporciona una experiencia de usuario fluida y receptiva, permitiendo a 
 
 Se ha implementado la opción de inicio de sesión utilizando el correo electrónico y la contraseña. En esta etapa, se han agregado dos usuarios: el usuario número 1 es `admin@admin.com` con la contraseña `secreto`, y el segundo usuario es `user@user.com` con la contraseña `1234`. queda como mejora a implementar la funcionalidad de alta, baja y modificación de usuarios.
 
-El correo electrónico del usuario con el que se ha iniciado sesión se muestra en la pantalla de dispositivos. Por el momento, al iniciar sesión con cualquiera de los usuarios, solo se muestran los dispositivos del usuario `admin@admin.com`.
+El correo electrónico del usuario con el que se ha iniciado sesión se muestra en la pantalla de dispositivos. Por el momento, al iniciar sesión con cualquiera de los usuarios, solo se muestran los dispositivos del usuario `admin@admin.com`:
 
 ![login](doc/login.png)
 
@@ -200,38 +200,38 @@ Para agregar un dispositivo, simplemente haz clic en el botón `+` en la parte i
 
 ![add](doc/add.png)
 
-La aplicación confirmará que el dispositivo ha sido agregado.
+La aplicación confirmará que el dispositivo ha sido agregado:
 
 ![added](doc/added.png)
 
 #### Eliminar un dispositivo 🗑️
 
-En cada uno de los dispositivos listados, hay un botón `Eliminar`. Al hacer clic en él, se mostrará un menú para confirmar la acción.
+En cada uno de los dispositivos listados, hay un botón `Eliminar`. Al hacer clic en él, se mostrará un menú para confirmar la acción:
 
 ![erase](doc/erase.png)
 
-De manera similar al agregar dispositivos, recibirás una notificación informando que el dispositivo ha sido eliminado.
+De manera similar al agregar dispositivos, recibirás una notificación informando que el dispositivo ha sido eliminado:
 
 ![erased](doc/erased.png)
 
 #### Modificar un dispositivo 📝
 
-En cada uno de los dispositivos listados, hay un botón `Modificar`. Al hacer clic en él, se mostrará un menú para confirmar la acción. En esta instancia, podrás editar los mismos atributos que se solicitan al agregar un dispositivo.
+En cada uno de los dispositivos listados, hay un botón `Modificar`. Al hacer clic en él, se mostrará un menú para confirmar la acción. En esta instancia, podrás editar los mismos atributos que se solicitan al agregar un dispositivo:
 
 ![modify](doc/modify.png)
 
-Luego, recibirás una notificación confirmando que la modificación se ha realizado con éxito.
+Luego, recibirás una notificación confirmando que la modificación se ha realizado con éxito:
 
 ![modified](doc/modified.png)
 
 #### Refrescar lista de dispositivos 🔄
 
-En la parte inferior, junto al botón `Agregar` dispositivos, encontrarás un botón `Refrescar`. Este botón es útil para actualizar los valores de los dispositivos.
+En la parte inferior, junto al botón `Agregar` dispositivos, encontrarás un botón `Refrescar`. Este botón es útil para actualizar los valores de los dispositivos:
 
 
 ### Backend 👨🏻‍💻
 
-Completá todos los detalles de funcionamiento sobre el backend, sus interacciónes con el cliente web, la base de datos, etc.
+Completá todos los detalles de funcionamiento sobre el backend, sus interacciónes con el cliente web, la base de datos, etc:
 
 <details><summary><b>Ver los endpoints disponibles</b></summary><br>
 

@@ -156,30 +156,6 @@ En esta sección podés ver los detalles específicos de funcionamiento del cód
 
 <details><summary><b>Mira los detalles de implementación</b></summary><br>
 
-### Logueo de usuarios 👥
-
-Se realizó una implementacion de logueo por email y contraseña. Se han agregado dos usuarios en esta etapa. El usuario numero 1 es `admin@admin.com` y la contraseña `secreto`, y el segundo usuario es `user@user.com` y la contraseña `1234`. Queda pendiente la implementacion de alta, baja y modificacion de usuarios.
-El usuario (email) con el cual se loguea se muestra en la pantalla de dispositivos. Por el momento al loguearse con cualquiera de los usuarios muestra solo los dispositivos 1.
-
-### Agregar un dispositivo ➕
-
-Para agregar un dispositivo basta con clickear sobre el boton "+" en la parte inferior de la página y completar los datos del formulario, finalmente se debe confirmar la acción con el boton de `agregar`, o bien cancelar en caso que no se desee avanzar con el alta de un nuevo dispositivo. Existen tres tipos de dispositivos que se pueden agregar: Luz (dispositivo tipo 1), Cortina (dispositivo tipo 2) y Aire (dispositivo tipo 3).
-- Luz: Tiene un switch o interruptor del tipo ON-OFF
-- Cortina: tiene una barra deslizadora para setear el valor entre 0% y 100%, con intervalos de 10% .
-- Aire: tiene una barra deslizadora para setear la temperatura entre 16 y 30°C, con intervalos de 1°C .
-
-### Eliminar un dispositivo 🗑️
-
-En cada uno de los dispositivos listados existe un boton de `Eliminar`. Luego se despliega un menú para confirmar dicha accion.
-
-### Modificar un dispositivo 📝
-
-En cada uno de los dispositivos listados existe un boton de `Modificar`. Luego se despliega un menú para confirmar dicha accion. Los mismos atributos que se piden al momento del agregado de un dispositivo son editables en esta instancia.
-
-### Refreescar lista de dispositivos 🔄
-
-Sobre la parte inferior, y junto al boton de `Agregar` dispositivos, se encuentra un boton de `Refrescar`. El mismo es de utilidad para actualizar los valores de los dispositivos.
-
 ### Frontend 👨🏻‍💻
 
 Este proyecto es una Single Page Application (SPA) basada en el template de [https://github.com/mramos88/app-fullstack-base-2023-i08]. La aplicación ha sido modificada para permitir el alta, baja y modificación de dispositivos, así como el inicio de sesión de usuarios mediante correo electrónico y contraseña.
@@ -191,6 +167,35 @@ Los usuarios pueden registrarse y acceder a sus cuentas utilizando sus credencia
 La SPA proporciona una experiencia de usuario fluida y receptiva, permitiendo a los usuarios realizar todas las acciones necesarias para administrar los dispositivos de manera eficiente.
 
 ¡Explora todas las funcionalidades que ofrece esta aplicación!
+
+![devices](doc/devices.png)
+
+#### Logueo de usuarios 👥
+
+Se realizó una implementacion de logueo por email y contraseña. Se han agregado dos usuarios en esta etapa. El usuario numero 1 es `admin@admin.com` y la contraseña `secreto`, y el segundo usuario es `user@user.com` y la contraseña `1234`. Queda pendiente la implementacion de alta, baja y modificacion de usuarios.
+El usuario (email) con el cual se loguea se muestra en la pantalla de dispositivos. Por el momento al loguearse con cualquiera de los usuarios muestra solo los dispositivos 1.
+
+![login](doc/login.png)
+
+
+### Agregar un dispositivo ➕
+
+Para agregar un dispositivo basta con clickear sobre el boton "+" en la parte inferior de la página y completar los datos del formulario, finalmente se debe confirmar la acción con el boton de `agregar`, o bien cancelar en caso que no se desee avanzar con el alta de un nuevo dispositivo. Existen tres tipos de dispositivos que se pueden agregar: Luz (dispositivo tipo 1), Cortina (dispositivo tipo 2) y Aire (dispositivo tipo 3).
+- Luz: Tiene un switch o interruptor del tipo ON-OFF
+- Cortina: tiene una barra deslizadora para setear el valor entre 0% y 100%, con intervalos de 10% .
+- Aire: tiene una barra deslizadora para setear la temperatura entre 16 y 30°C, con intervalos de 1°C .
+
+#### Eliminar un dispositivo 🗑️
+
+En cada uno de los dispositivos listados existe un boton de `Eliminar`. Luego se despliega un menú para confirmar dicha accion.
+
+#### Modificar un dispositivo 📝
+
+En cada uno de los dispositivos listados existe un boton de `Modificar`. Luego se despliega un menú para confirmar dicha accion. Los mismos atributos que se piden al momento del agregado de un dispositivo son editables en esta instancia.
+
+#### Refrescar lista de dispositivos 🔄
+
+Sobre la parte inferior, y junto al boton de `Agregar` dispositivos, se encuentra un boton de `Refrescar`. El mismo es de utilidad para actualizar los valores de los dispositivos.
 
 ### Backend 👨🏻‍💻
 

@@ -186,7 +186,7 @@ De misma manera si no se ingresa la contraseña:
 
 ![login_failed2](doc/login_failed2.png)
 
-En el caso que el mail sea incorrecto se informará mediante un aviso:
+En el caso que las credenciales sea incorrectas se informará mediante un aviso:
 
 ![login_failed3](doc/login_failed3.png)
 

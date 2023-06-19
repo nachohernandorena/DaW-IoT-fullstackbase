@@ -164,7 +164,7 @@ La aplicación envía los estados de los dispositivos al servidor y los almacena
 
 Los usuarios pueden registrarse y acceder a sus cuentas utilizando sus credenciales de inicio de sesión. Estos datos también se almacenan de forma segura en la base de datos para su posterior autenticación.
 
-La SPA proporciona una experiencia de usuario fluida y receptiva, permitiendo a los usuarios realizar todas las acciones necesarias para administrar los dispositivos de manera eficiente.
+La SPA proporciona una experiencia de usuario fluida y receptiva, permitiendo a los usuarios realizar todas las acciónes necesarias para administrar los dispositivos de manera eficiente.
 
 ¡Explora todas las funcionalidades que ofrece esta aplicación!
 
@@ -178,20 +178,38 @@ El usuario (email) con el cual se loguea se muestra en la pantalla de dispositiv
 ![login](doc/login.png)
 
 
-### Agregar un dispositivo ➕
+#### Agregar un dispositivo ➕
 
 Para agregar un dispositivo basta con clickear sobre el boton "+" en la parte inferior de la página y completar los datos del formulario, finalmente se debe confirmar la acción con el boton de `agregar`, o bien cancelar en caso que no se desee avanzar con el alta de un nuevo dispositivo. Existen tres tipos de dispositivos que se pueden agregar: Luz (dispositivo tipo 1), Cortina (dispositivo tipo 2) y Aire (dispositivo tipo 3).
 - Luz: Tiene un switch o interruptor del tipo ON-OFF
 - Cortina: tiene una barra deslizadora para setear el valor entre 0% y 100%, con intervalos de 10% .
 - Aire: tiene una barra deslizadora para setear la temperatura entre 16 y 30°C, con intervalos de 1°C .
 
+![add](doc/add.png)
+
+La aplicacion confirmará que el dispositivo ha sido agregado.
+
+![added](doc/added.png)
+
 #### Eliminar un dispositivo 🗑️
 
-En cada uno de los dispositivos listados existe un boton de `Eliminar`. Luego se despliega un menú para confirmar dicha accion.
+En cada uno de los dispositivos listados existe un boton de `Eliminar`. Luego se despliega un menú para confirmar dicha acción.
+
+![erase](doc/erase.png)
+
+De igual manera que para en el agregado de dispositivos, en el caso de la eliminación se verá un aviso informando dicha acción.
+
+![erased](doc/erased.png)
 
 #### Modificar un dispositivo 📝
 
-En cada uno de los dispositivos listados existe un boton de `Modificar`. Luego se despliega un menú para confirmar dicha accion. Los mismos atributos que se piden al momento del agregado de un dispositivo son editables en esta instancia.
+En cada uno de los dispositivos listados existe un boton de `Modificar`. Luego se despliega un menú para confirmar dicha acción. Los mismos atributos que se piden al momento del agregado de un dispositivo son editables en esta instancia.
+
+![modify](doc/modify.png)
+
+Luego un aviso informará la confirmación de la modificación 
+
+![modified](doc/modified.png)
 
 #### Refrescar lista de dispositivos 🔄
 
@@ -199,7 +217,7 @@ Sobre la parte inferior, y junto al boton de `Agregar` dispositivos, se encuentr
 
 ### Backend 👨🏻‍💻
 
-Completá todos los detalles de funcionamiento sobre el backend, sus interacciones con el cliente web, la base de datos, etc.
+Completá todos los detalles de funcionamiento sobre el backend, sus interacciónes con el cliente web, la base de datos, etc.
 
 <details><summary><b>Ver los endpoints disponibles</b></summary><br>
 
@@ -262,7 +280,7 @@ Goto IoT es una plataforma que publica material y proyectos de código abierto b
 
 ## Muestas de agradecimiento 🎁
 
-Si te gustó este proyecto y quisieras apoyarlo, cualquiera de estas acciones estaría más que bien para nosotros:
+Si te gustó este proyecto y quisieras apoyarlo, cualquiera de estas acciónes estaría más que bien para nosotros:
 
 * Apoyar este proyecto con una ⭐ en Github para llegar a más personas.
 * Sumarte a [nuestra comunidad](https://groups.google.com/g/gotoiot) abierta y dejar un feedback sobre qué te pareció el proyecto.

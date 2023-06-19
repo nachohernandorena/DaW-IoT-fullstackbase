@@ -227,11 +227,11 @@ class Main implements EventListenerObject, httpResponse {
                   M.toast({ html: "🚪 Ingresando..." });
                   this.initialQuery();  
                 } else {
-                  M.toast({ html: "Error de usuario y/o contraseña", classes: 'toast-centered' });
+                  M.toast({ html: "❌ Error de usuario y/o contraseña", classes: 'toast-centered' });
                 }
               })
               .catch((error) => {
-                M.toast({ html: "Error desconocido", classes: 'toast-centered'  });
+                M.toast({ html: "🤔 Error desconocido", classes: 'toast-centered'  });
               });
           } 
       }

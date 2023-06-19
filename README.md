@@ -158,7 +158,7 @@ En esta sección podés ver los detalles específicos de funcionamiento del cód
 
 ### Logueo de usuarios 👥
 
-Se realizó una implmentacion de logueo por email y contraseña. Se han agregado dos usuarios en esta etapa. El usuario numero 1 es 'admin@admin.com' y la contraseña 'secreto', y el segundo usuario es 'user@user.com' y la contraseña '1234'. Queda pendiente la implementacion de alta, baja y modificacion de usuarios.
+Se realizó una implementacion de logueo por email y contraseña. Se han agregado dos usuarios en esta etapa. El usuario numero 1 es 'admin@admin.com' y la contraseña 'secreto', y el segundo usuario es 'user@user.com' y la contraseña '1234'. Queda pendiente la implementacion de alta, baja y modificacion de usuarios.
 El usuario (email) con el cual se loguea se muestra en la pantalla de dispositivos. Por el momento al loguearse con cualquiera de los usuarios muestra solo los dispositivos 1.
 
 ### Agregar un dispositivo ➕

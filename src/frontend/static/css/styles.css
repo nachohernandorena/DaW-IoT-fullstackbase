@@ -1,0 +1,50 @@
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+.title{
+    color: brown;
+    font-weight: bold;
+    font-size: large;
+}
+.user-profile {
+    margin-bottom: 20px;
+  }
+  
+  .user-profile h2 {
+    font-size: 24px;
+    color: #333;
+  }
+  
+  .user-profile p {
+    font-size: 16px;
+    color: #666;
+  }
+  
+  .user-form input[type="text"],
+  .user-form input[type="email"],
+  .user-form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .user-form button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  .toast-centered {
+    transform: translateX(-50%);
+    transform: translateY(-50%);
+    left: 50%;
+    bottom: 20px;
+  }

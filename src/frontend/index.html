@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="./static/css/styles.css"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="./static/css/materialize.min.css"  media="screen,projection"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <script type="text/javascript" src="static/js/materialize.min.js"></script>
+    <script type="text/javascript" src="js/persona.js"></script>
+    <script type="text/javascript" src="js/administrador.js"></script>
+    <script type="text/javascript" src="js/usuario.js"></script>
+    <script type="text/javascript" src="js/device.js"></script>
+    <script type="text/javascript" src="js/framework.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <link rel="icon" type="image/png" href="static/images/favicon.png">
+  </head>
+  <body>
+    <main>
+      <!-- Navigation bar -->
+      <nav style="background-color:#124580">
+        <div class="nav-wrapper">
+          <a href="/" class="brand-logo left" style="margin-left: 15px;"><i class="material-icons">wifi</i>Smart Home</a>
+          <ul id="nav-mobile" class="right">
+            <li><a href="https://github.com/nachohernandorena/DaW-IoT-fullstackbase/blob/master/README.md" id="nav-help"><i class="material-icons">help</i>Help</a></li>
+            <li><a href="/" id="logout-button" hidden><i class="material-icons">exit_to_app</i>Salir</a></li>
+          </ul>
+        </div>
+      </nav>	
+      <!-- Page Body -->
+      <div class="container">
+        <br/>
+        <h3 id="welcome">Hola!</h3>
+        <h3 id="title" hidden>Dispositivos Smart Home</h3>
+        <h6 id="hello" hidden></h6>
+        <br/>
+        <div class="row">
+          <div id="devbox">
+          </div>
+          <div class="row">
+            <div id="divEmail" class="input-field col s12 xl6">
+            <i class="material-icons prefix">person</i>
+            <input id="email" placeholder="Ingrese email"/>
+            </div>
+          </div>
+          <div class="row">  
+            <div id="divPassword" class="input-field col s12 xl6">
+              <i class="material-icons prefix">lock</i>
+              <input type="password" id="password" placeholder="Ingrese contraseña" />
+            </div>
+          </div>
+          <div id="divEnter" class="input-field col s12 xl10">
+            <button class="btn waves-effect waves-light button-view" id="enter-button" name="hello_button" onclick="login()"><i id="enter-button" class="material-icons left">login</i>Ingresar</button>
+          </div>
+        </div>
+        <div hidden id="divAdd" class="col s12 xl2">
+          <button class="btn waves-effect waves-light button-view" id="add-button" name="hello_button"><i id="add-button" class="material-icons left">add</i>Agregar</button>
+        </div>
+      </div>
+    </main>
+    <!-- Page Footer -->
+    <footer class="page-footer" style="background-color:#124580">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s6">
+            <h5 class="white-text">Smart Home</h5>
+            <p class="grey-text text-lighten-4">Ignacio Hernandorena © - 2023</p>
+          </div>
+          <div class="col l6 s6">
+            <h5 class="white-text right-align">Contacto</h5>
+            <p class="white-text right-align">
+              <a class="grey-text text-lighten-3" href="mailto:ignacio.hernandorena@gmail.com" target="_blank">Email | </a> 
+              <a class="grey-text text-lighten-3" href="https://www.linkedin.com/in/iphernandorena/" target="_blank">LinkedIn | </a> 
+              <a class="grey-text text-lighten-3" href="https://github.com/nachohernandorena/" target="_blank">GitHub</a> 
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!--Botones Modal-->
+    <div id="delete-modal" class="modal">
+      <div class="modal-content">
+        <div class="row">
+          <p>¿Quiere eliminar el dispositivo?</p>
+          <span class="grey-text">ID: </span><span id="delete-id"></span>
+          <br/>
+          <span class="grey-text">Nombre: </span><span id="delete-name"></span>
+          <br/>
+          <span class="grey-text">Descripción: </span><span id="delete-description"></span>
+        </div>
+      </div>
+      <div class="modal-footer modal-actions">
+        <input hidden id="input-delete-id"/>
+        <button class="button-margin btn red waves-effect waves-light button-view" id="cancel-delete"><i id="cancel-delete" class="material-icons left">cancel</i>Cancelar</button>
+        <button class="button-margin btn green waves-effect waves-light button-view" id="confirm-delete"><i id="confirm-delete" class="material-icons left">check</i>Ok</button>
+      </div>
+    </div>
+    <div id="add-modal" class="modal">
+      <div class="modal-content">
+        <div class="row">
+          <div class="input-field col s6">
+            <input id="txt-name" type="text" class="validate">
+            <label for="txt-name">Nombre</label>
+          </div>
+          <div class="input-field col s6">
+            <input id="txt-description" type="text" class="validate">
+            <label for="txt-description">Descripcion</label>
+          </div>
+          <div class="input-field col s6">
+            <select id="select-type">
+              <option value="1">Lampara</option>
+              <option value="2">Cortina</option>
+              <option value="3">Aire</option>
+            </select>
+            <label>Tipo de dispositivo</label>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer modal-actions">
+        <button class="button-margin btn red waves-effect waves-light button-view" id="cancel-add"> <i id="cancel-add" class="material-icons left">cancel</i>Cancelar</button>
+        <button class="button-margin btn green waves-effect waves-light button-view" id="confirm-add"><i id="confirm-add" class="material-icons left">add</i>Agregar</button>
+      </div>
+    </div>
+    <div id="edit-modal" class="modal">
+      <div class="modal-content">
+        <div class="row">
+          <div class="input-field col s6">
+            <input placeholder="Ingrese nuevo nombre" id="edit-name" type="text" class="validate">
+            <label for="edit-name">Nombre</label>
+          </div>
+          <div class="input-field col s6">
+            <input placeholder="Ingrese nueva descripción" id="edit-description" type="text" class="validate">
+            <label for="edit-description">Descripcion</label>
+          </div>
+          <div class="input-field col s6 icon-margin">
+            <select id="select-edit-type">
+              <option value="1">Lampara</option>
+              <option value="2">Cortina</option>
+              <option value="3">Aire</option>
+            </select>
+            <label>Tipo de dispositivo</label>
+          </div>
+        </div>
+        <input hidden id="edit-device-id"/>
+      </div>
+      <div class="modal-footer modal-actions">
+        <button class="button-margin btn red waves-effect waves-light button-view" id="cancel-edit"><i id="cancel-edit" class="material-icons left">cancel</i>Cancelar</button>
+                <button class="button-margin btn green waves-effect waves-light button-view" id="confirm-edit"><i id="confirm-edit" class="material-icons left">save</i>Guardar</button>
+      </div>
+    </div>
+  </body>
+</html>

@@ -164,56 +164,58 @@ La aplicación envía los estados de los dispositivos al servidor y los almacena
 
 Los usuarios pueden registrarse y acceder a sus cuentas utilizando sus credenciales de inicio de sesión. Estos datos también se almacenan de forma segura en la base de datos para su posterior autenticación.
 
-La SPA proporciona una experiencia de usuario fluida y receptiva, permitiendo a los usuarios realizar todas las acciónes necesarias para administrar los dispositivos de manera eficiente.
+La SPA proporciona una experiencia de usuario fluida y receptiva, permitiendo a los usuarios realizar todas las acciones necesarias para administrar los dispositivos de manera eficiente.
 
 ¡Explora todas las funcionalidades que ofrece esta aplicación!
 
 ![devices](doc/devices.png)
 
-#### Logueo de usuarios 👥
+#### Inicio de sesión de usuarios 👥
 
-Se realizó una implementacion de logueo por email y contraseña. Se han agregado dos usuarios en esta etapa. El usuario numero 1 es `admin@admin.com` y la contraseña `secreto`, y el segundo usuario es `user@user.com` y la contraseña `1234`. Queda pendiente la implementacion de alta, baja y modificacion de usuarios.
-El usuario (email) con el cual se loguea se muestra en la pantalla de dispositivos. Por el momento al loguearse con cualquiera de los usuarios muestra solo los dispositivos 1.
+Se ha implementado la opción de inicio de sesión utilizando el correo electrónico y la contraseña. En esta etapa, se han agregado dos usuarios: el usuario número 1 es `admin@admin.com` con la contraseña `secreto`, y el segundo usuario es `user@user.com` con la contraseña `1234`. queda como mejora a implementar la funcionalidad de alta, baja y modificación de usuarios.
+
+El correo electrónico del usuario con el que se ha iniciado sesión se muestra en la pantalla de dispositivos. Por el momento, al iniciar sesión con cualquiera de los usuarios, solo se muestran los dispositivos 1.
 
 ![login](doc/login.png)
 
-
 #### Agregar un dispositivo ➕
 
-Para agregar un dispositivo basta con clickear sobre el boton "+" en la parte inferior de la página y completar los datos del formulario, finalmente se debe confirmar la acción con el boton de `agregar`, o bien cancelar en caso que no se desee avanzar con el alta de un nuevo dispositivo. Existen tres tipos de dispositivos que se pueden agregar: Luz (dispositivo tipo 1), Cortina (dispositivo tipo 2) y Aire (dispositivo tipo 3).
-- Luz: Tiene un switch o interruptor del tipo ON-OFF
-- Cortina: tiene una barra deslizadora para setear el valor entre 0% y 100%, con intervalos de 10% .
-- Aire: tiene una barra deslizadora para setear la temperatura entre 16 y 30°C, con intervalos de 1°C .
+Para agregar un dispositivo, simplemente haz clic en el botón `+` en la parte inferior de la página y completa los datos del formulario. Luego, confirma la acción haciendo clic en el botón `Agregar` o `cancelar` si no deseas agregar un nuevo dispositivo. Puedes agregar tres tipos de dispositivos: Luz (tipo de dispositivo 1), Cortina (tipo de dispositivo 2) y Aire (tipo de dispositivo 3).
+
+- Luz: Tiene un interruptor de encendido y apagado.
+- Cortina: Tiene una barra deslizadora para ajustar el valor entre 0% y 100%, con intervalos de 10%.
+- Aire: Tiene una barra deslizadora para ajustar la temperatura entre 16°C y 30°C, con intervalos de 1°C.
 
 ![add](doc/add.png)
 
-La aplicacion confirmará que el dispositivo ha sido agregado.
+La aplicación confirmará que el dispositivo ha sido agregado.
 
 ![added](doc/added.png)
 
 #### Eliminar un dispositivo 🗑️
 
-En cada uno de los dispositivos listados existe un boton de `Eliminar`. Luego se despliega un menú para confirmar dicha acción.
+En cada uno de los dispositivos listados, hay un botón `Eliminar`. Al hacer clic en él, se mostrará un menú para confirmar la acción.
 
 ![erase](doc/erase.png)
 
-De igual manera que para en el agregado de dispositivos, en el caso de la eliminación se verá un aviso informando dicha acción.
+De manera similar al agregar dispositivos, recibirás una notificación informando que el dispositivo ha sido eliminado.
 
 ![erased](doc/erased.png)
 
 #### Modificar un dispositivo 📝
 
-En cada uno de los dispositivos listados existe un boton de `Modificar`. Luego se despliega un menú para confirmar dicha acción. Los mismos atributos que se piden al momento del agregado de un dispositivo son editables en esta instancia.
+En cada uno de los dispositivos listados, hay un botón `Modificar`. Al hacer clic en él, se mostrará un menú para confirmar la acción. En esta instancia, podrás editar los mismos atributos que se solicitan al agregar un dispositivo.
 
 ![modify](doc/modify.png)
 
-Luego un aviso informará la confirmación de la modificación 
+Luego, recibirás una notificación confirmando que la modificación se ha realizado con éxito.
 
 ![modified](doc/modified.png)
 
 #### Refrescar lista de dispositivos 🔄
 
-Sobre la parte inferior, y junto al boton de `Agregar` dispositivos, se encuentra un boton de `Refrescar`. El mismo es de utilidad para actualizar los valores de los dispositivos.
+En la parte inferior, junto al botón `Agregar` dispositivos, encontrarás un botón `Refrescar`. Este botón es útil para actualizar los valores de los dispositivos.
+
 
 ### Backend 👨🏻‍💻
 

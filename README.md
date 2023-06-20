@@ -152,13 +152,13 @@ En la siguiente ilustración podés ver cómo está organizado el proyecto para 
 
 ## Detalles de implementación 💻
 
-En esta sección podés ver los detalles específicos de funcionamiento del código y que son los siguientes.
+En esta sección podés ver los detalles específicos de funcionamiento del código.
 
 <details><summary><b>Mira los detalles de implementación</b></summary><br>
 
 ### Frontend 👨🏻‍💻
 
-Este proyecto es una Single Page Application (SPA) basada en el template del repositorio de [mramos88](https://github.com/mramos88/app-fullstack-base-2023-i08). La aplicación ha sido modificada para permitir el alta, baja y modificación de dispositivos, así como el inicio de sesión de usuarios mediante correo electrónico y contraseña.
+Este proyecto es una Single Page Application (SPA) basada en el template del repositorio de [mramos88](https://github.com/mramos88/app-fullstack-base-2023-i08). La aplicación ha sido modificada para permitir el alta, baja, modificación y control de dispositivos (de tres tipos: lamparas, cotinas y aires acondicionados), así como el inicio de sesión de usuarios mediante correo electrónico y contraseña.
 
 La aplicación envía los estados de los dispositivos al servidor y los almacena en una base de datos cada vez que ocurre un cambio. Todos los datos relevantes de los dispositivos, como el ID, nombre, descripción, tipo y estado, también se almacenan en la base de datos.
 
@@ -240,7 +240,7 @@ Este proyecto de backend proporciona una API con endpoints para realizar diversa
     *   email: almacena la dirección de correo electrónico del usuario.
     *   password: almacena la contraseña del usuario.
 
-> No se deben almacenar contraseñas directamente en la base de datos. Se recomienda utilizar técnicas de encriptación, como el hash y salt, para almacenar y verificar las contraseñas de forma segura.
+> 👀 ¡Recuerda!: No se deben almacenar contraseñas directamente en la base de datos. Se recomienda utilizar técnicas de encriptación, como el hash y salt, para almacenar y verificar las contraseñas de forma segura.
 
 2. Devices:
     *   id: almacena el ID único de cada dispositivo.

@@ -44,12 +44,12 @@ CREATE TABLE `Devices` (
 --
 
 INSERT INTO `Devices` (`id`, `name`, `description`, `state`, `type`) VALUES
-(1, 'Lampara 1', 'Luz living', 1, 1),
+(1, 'Luz 1', 'Luz living', 1, 1),
 (2, 'Velador', 'Velador living', 1, 1),
 (4, 'Persiana 1', 'Persiana living', 60, 2),
 (5, 'Aire 1', 'Aire del Living', 24, 3),
 (6, 'Persiana 2', 'Persiana balcon', 40, 2),
-(3, 'Lampara 2', 'Luz cocina', 0, 1);
+(3, 'Luz 2', 'Luz cocina', 0, 1);
 
 
 --

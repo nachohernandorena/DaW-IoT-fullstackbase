@@ -158,7 +158,7 @@ En esta sección podés ver los detalles específicos de funcionamiento del cód
 
 ### Frontend 👨🏻‍💻
 
-Este proyecto es una Single Page Application (SPA) basada en el template de [mramos88](https://github.com/mramos88/app-fullstack-base-2023-i08). La aplicación ha sido modificada para permitir el alta, baja y modificación de dispositivos, así como el inicio de sesión de usuarios mediante correo electrónico y contraseña.
+Este proyecto es una Single Page Application (SPA) basada en el template del repositorio de [mramos88](https://github.com/mramos88/app-fullstack-base-2023-i08). La aplicación ha sido modificada para permitir el alta, baja y modificación de dispositivos, así como el inicio de sesión de usuarios mediante correo electrónico y contraseña.
 
 La aplicación envía los estados de los dispositivos al servidor y los almacena en una base de datos cada vez que ocurre un cambio. Todos los datos relevantes de los dispositivos, como el ID, nombre, descripción, tipo y estado, también se almacenan en la base de datos.
 
@@ -196,7 +196,7 @@ Para agregar un dispositivo, simplemente haz clic en el botón `+` en la parte i
 
 - Luz: Tiene un interruptor de encendido y apagado.
 - Cortina: Tiene una barra deslizadora para ajustar el valor entre 0% y 100%, con intervalos de 10%.
-- Aire: Tiene una barra deslizadora para ajustar la temperatura entre 16°C y 30°C, con intervalos de 1°C.
+- Aire Acondicionado: Tiene una barra deslizadora para ajustar la temperatura entre 16°C y 30°C, con intervalos de 1°C.
 
 ![add](doc/add.png)
 
@@ -226,36 +226,166 @@ Luego, recibirás una notificación confirmando que la modificación se ha reali
 
 #### Refrescar lista de dispositivos 🔄
 
-En la parte inferior, junto al botón `Agregar` dispositivos, encontrarás un botón `Refrescar`. Este botón es útil para actualizar los valores de los dispositivos:
+En la parte inferior, junto al botón `Agregar` dispositivos, encontrarás un botón `Refrescar`. Este botón es útil para actualizar los valores de los dispositivos.
 
 
 ### Backend 👨🏻‍💻
 
-Completá todos los detalles de funcionamiento sobre el backend, sus interacciónes con el cliente web, la base de datos, etc:
+Este proyecto de backend proporciona una API con endpoints para realizar diversas funciones relacionadas con dispositivos y usuarios. La aplicación utiliza una base de datos para almacenar la información. A continuación, se detallan los endpoints disponibles junto con una descripción de la base de datos utilizadas:
+
+#### Base de datos 💾:
+
+1. Users:
+    *   id: almacena el ID único de cada usuario.
+    *   email: almacena la dirección de correo electrónico del usuario.
+    *   password: almacena la contraseña del usuario.
+
+> No se deben almacenar contraseñas directamente en la base de datos. Se recomienda utilizar técnicas de encriptación, como el hash y salt, para almacenar y verificar las contraseñas de forma segura.
+
+2. Devices:
+    *   id: almacena el ID único de cada dispositivo.
+    *   name: almacena el nombre del dispositivo.
+    *   description: almacena la descripción del dispositivo.
+    *   state: almacena el estado actual del dispositivo.
+    *   type: almacena el tipo de dispositivo (1 para luz, 2 para cortina, 3 para aire acondicionado).
+    *   user_id: almacena el ID del usuario al que pertenece el dispositivo.
+
+#### Endpoints ⚙️ :
+A continuación se presentan los endpoints disponibles junto con sus descripciones:
 
 <details><summary><b>Ver los endpoints disponibles</b></summary><br>
 
-Completá todos los endpoints del backend con los metodos disponibles, los headers y body que recibe, lo que devuelve, ejemplos, etc.
+A continuación se listan los endpoints con los detalles de cada uno:
 
-1) Devolver el estado de los dispositivos.
+1. Obtener toda la lista de dispositivos y sus características de la base de datos:
 
-```json
-{
-    "method": "get",
-    "request_headers": "application/json",
-    "request_body": "",
-    "response_code": 200,
-    "request_body": {
-        "devices": [
+    *   URL: http://localhost:8000/devices
+    *   Método: GET
+    *   Body: Ninguno
+    *   Respuesta:
+        *   Código de respuesta 200 - OK, junto con un JSON que contiene los dispositivos.
+        *   Código de respuesta 400 - Error.
+        Ejemplo de respuesta exitosa (código 200):
+    ```json
+        [
             {
                 "id": 1,
-                "status": true,
-                "description": "Kitchen light"
+                "name": "Luz",
+                "description": "Living",
+                "state": 0,
+                "type": 1,
+                "user_id": 1
+            },
+            {
+                "id": 2,
+                "name": "Cortina",
+                "description": "Habitacion",
+                "state": 60,
+                "type": 2,
+                "user_id": 1
+            },
+            {
+                "id": 3,
+                "name": "Aire",
+                "description": "Living",
+                "state": 24,
+                "type": 3,
+                "user_id": 1
+            },
+            {
+                "id": 4,
+                "name": "Luz",
+                "description": "Cocina",
+                "state": 1,
+                "type": 1,
+                "user_id": 2
+            },
+            {
+                "id": 5,
+                "name": "Cortina",
+                "description": "Comedor",
+                "state": 20,
+                "type": 2,
+                "user_id": 2
+            },
+            {
+                "id": 6,
+                "name": "Aire",
+                "description": "Comedor",
+                "state": 20,
+                "type": 3,
+                "user_id": 2
             }
         ]
-    },
-}
-``` 
+    ```
+
+2. Buscar un dispositivo en particular por medio de su id:
+    *   URL: http://localhost:8000/devices/id
+    *   Método: GET
+    *   Body: Ninguno
+    *   Respuesta:
+        *   Código de respuesta 200 - OK, junto con un JSON que contiene el dispositivo solicitado.
+        *   Código de respuesta 400 - Error.
+        Ejemplo de respuesta exitosa (código 200):
+        ```json
+        [
+            {
+                "id": 4,
+                "name": "Luz",
+                "description": "Cocina",
+                "state": 1,
+                "type": 1,
+                "user_id": 2
+            },
+        ]
+        ```
+3. Obtener un dispositivo por su id:
+    *   URL: http://localhost:8000/devices/:id
+    *   Método: GET
+    *   Body: Ninguno
+    *   Respuesta:
+        *   Código de respuesta 200 - OK, junto con un JSON que contiene el dispositivo solicitado.
+        *   Código de respuesta 400 - Error.
+
+4. Actualizar el estado de un dispositivo:
+    *   URL:  http://localhost:8000/devices/state/:id
+    *   Método: PUT
+    *   Body: Estado actualizado del dispositivo.
+    *   Respuesta:
+        *   Código de respuesta 200 - OK, junto con un JSON que indica el número de filas modificadas.
+        *   Código de respuesta 400 - Error.
+
+5. Actualizar los detalles de un dispositivo:
+    *   URL:  http://localhost:8000/devices/:id.
+    *   Método: PUT
+    *   Body: Nuevos detalles del dispositivo (nombre, descripción y tipo).
+    *   Respuesta:
+        *   Código de respuesta 200 - OK, junto con un JSON que indica el número de filas modificadas.
+        *   Código de respuesta 400 - Error.
+
+6.  Agregar un nuevo dispositivo:
+    *   URL:  http://localhost:8000/devices/.
+    *   Método: POST
+    *   Body: Datos del nuevo dispositivo (nombre, descripción, estado, tipo y user_id).
+    *   Respuesta:
+        *   Código de respuesta 201 - Created, junto con un JSON que contiene el ID del dispositivo recién creado.
+        *   Código de respuesta 400 - Error.
+
+7.  Eliminar un dispositivo:
+    *   URL:  http://localhost:8000/devices/:id
+    *   Método: DELETE
+    *   Body: Ninguno.
+    *   Respuesta:
+        *   Código de respuesta 200 - OK, junto con un mensaje que indica que el dispositivo ha sido eliminado.
+        *   Código de respuesta 400 - Error.
+
+8.  Iniciar sesión:
+    *   URL:  http://localhost:8000/login
+    *   Método: POST
+    *   Body: Datos de inicio de sesión (email y contraseña).
+    *   Respuesta:
+        *   Código de respuesta 200 - OK, indica que el inicio de sesión fue exitoso.
+        *   Código de respuesta 401 - Unauthorized, indica que ha ocurrido un error en el inicio de sesión. 
 
 </details>
 

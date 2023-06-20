@@ -51,7 +51,7 @@ Para acceder al cliente web ingresa a a la URL [http://localhost:8000/](http://l
 
 Si pudiste acceder al cliente web y al administrador significa que la aplicación se encuentra corriendo bien. 
 
-> Si te aparece un error la primera vez que corres la app, deteńe el proceso y volvé a iniciarla. Esto es debido a que el backend espera que la DB esté creada al iniciar, y en la primera ejecución puede no alcanzar a crearse. A partir de la segunda vez el problema queda solucionado.
+> Si te aparece un error la primera vez que corres la app, detené el proceso y volvé a iniciarla. Esto es debido a que el backend espera que la DB esté creada al iniciar, y en la primera ejecución puede no alcanzar a crearse. A partir de la segunda vez el problema queda solucionado.
 
 </details>
 
@@ -190,6 +190,8 @@ En el caso que las credenciales sea incorrectas se informará mediante un aviso:
 
 ![login_failed3](doc/login_failed3.png)
 
+> 👀 ¡Importante!: Al levantar el `docker-compose`, en ocasiones, se ha observado que no conecta a la DB y por esto recibirás un mensaje de `Error de usuario y/o contraseña`. Si esto ocurre detené el proceso y volvé a iniciar la app. Si continua prueba actualizando el `index.js`.
+
 #### Agregar un dispositivo ➕
 
 Para agregar un dispositivo, simplemente haz clic en el botón `+` en la parte inferior de la página y completa los datos del formulario. Luego, confirma la acción haciendo clic en el botón `Agregar` o `cancelar` si no deseas agregar un nuevo dispositivo. Puedes agregar tres tipos de dispositivos: Lampara (tipo de dispositivo 1), Cortina (tipo de dispositivo 2) y Aire (tipo de dispositivo 3).
@@ -231,7 +233,7 @@ En la parte inferior, junto al botón `Agregar` dispositivos, encontrarás un bo
 
 ### Backend 👨🏻‍💻
 
-Elbackend proporciona una API con endpoints para realizar diversas funciones relacionadas con dispositivos y usuarios. La aplicación utiliza una base de datos para almacenar la información. A continuación, se detallan mas informacion sobre la estructura de la base de datos y endpoints disponibles:
+El backend proporciona una API con endpoints para realizar diversas funciones relacionadas con dispositivos y usuarios. La aplicación utiliza una base de datos para almacenar la información. A continuación, se detallan mas informacion sobre la estructura de la base de datos y endpoints disponibles:
 
 #### Base de datos 💾:
 

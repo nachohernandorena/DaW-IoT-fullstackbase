@@ -133,7 +133,7 @@ app.post('/register', (req, res) => {
         res.send(err).status(400);
         return;
       }
-      res.send("usuario registrado").status(201);
+      res.send("user registered").status(201);
     });
   });
 
@@ -146,7 +146,7 @@ app.delete('/Users/:id', (req, res) => {
         res.send(err).status(400);
         return;
       }
-      res.send("Usuario borrado").status(200);
+      res.send("user deleted").status(200);
     });
   });
 

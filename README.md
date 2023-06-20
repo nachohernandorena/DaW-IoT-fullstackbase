@@ -255,8 +255,6 @@ A continuación se presentan los endpoints disponibles junto con sus descripcion
 
 <details><summary><b>Ver los endpoints disponibles</b></summary><br>
 
-A continuación se listan los endpoints con los detalles de cada uno:
-
 1. Obtener toda la lista de dispositivos y sus características de la base de datos:
 
     *   URL: http://localhost:8000/devices

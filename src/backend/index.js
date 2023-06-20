@@ -9,14 +9,6 @@ app.use(express.json());
 // to serve static files
 app.use(express.static('/home/node/app/static/'));
 
-class User {
-    constructor(id, email, password, type) {
-      this.id = id;
-      this.email = email;
-      this.password = password;
-      this.type = type;
-    }
-}
 
 //=======[ Main module code ]==================================================
 //Obtener dispositivos

@@ -231,7 +231,7 @@ En la parte inferior, junto al botón `Agregar` dispositivos, encontrarás un bo
 
 ### Backend 👨🏻‍💻
 
-Este proyecto de backend proporciona una API con endpoints para realizar diversas funciones relacionadas con dispositivos y usuarios. La aplicación utiliza una base de datos para almacenar la información. A continuación, se detallan los endpoints disponibles junto con una descripción de la base de datos utilizadas:
+Elbackend proporciona una API con endpoints para realizar diversas funciones relacionadas con dispositivos y usuarios. La aplicación utiliza una base de datos para almacenar la información. A continuación, se detallan mas informacion sobre la estructura de la base de datos y endpoints disponibles:
 
 #### Base de datos 💾:
 

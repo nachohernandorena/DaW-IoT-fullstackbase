@@ -265,7 +265,8 @@ A continuación se listan los endpoints con los detalles de cada uno:
     *   Respuesta:
         *   Código de respuesta 200 - OK, junto con un JSON que contiene los dispositivos.
         *   Código de respuesta 400 - Error.
-        Ejemplo de respuesta exitosa (código 200):
+        
+    Ejemplo de respuesta exitosa (código 200):
     ```json
         [
             {

@@ -192,9 +192,9 @@ En el caso que las credenciales sea incorrectas se informará mediante un aviso:
 
 #### Agregar un dispositivo ➕
 
-Para agregar un dispositivo, simplemente haz clic en el botón `+` en la parte inferior de la página y completa los datos del formulario. Luego, confirma la acción haciendo clic en el botón `Agregar` o `cancelar` si no deseas agregar un nuevo dispositivo. Puedes agregar tres tipos de dispositivos: Luz (tipo de dispositivo 1), Cortina (tipo de dispositivo 2) y Aire (tipo de dispositivo 3).
+Para agregar un dispositivo, simplemente haz clic en el botón `+` en la parte inferior de la página y completa los datos del formulario. Luego, confirma la acción haciendo clic en el botón `Agregar` o `cancelar` si no deseas agregar un nuevo dispositivo. Puedes agregar tres tipos de dispositivos: Lampara (tipo de dispositivo 1), Cortina (tipo de dispositivo 2) y Aire (tipo de dispositivo 3).
 
-- Luz: Tiene un interruptor de encendido y apagado.
+- Lampara: Tiene un interruptor de encendido y apagado.
 - Cortina: Tiene una barra deslizadora para ajustar el valor entre 0% y 100%, con intervalos de 10%.
 - Aire Acondicionado: Tiene una barra deslizadora para ajustar la temperatura entre 16°C y 30°C, con intervalos de 1°C.
 
@@ -247,7 +247,7 @@ Este proyecto de backend proporciona una API con endpoints para realizar diversa
     *   name: almacena el nombre del dispositivo.
     *   description: almacena la descripción del dispositivo.
     *   state: almacena el estado actual del dispositivo.
-    *   type: almacena el tipo de dispositivo (1 para luz, 2 para cortina, 3 para aire acondicionado).
+    *   type: almacena el tipo de dispositivo (1 para Lampara, 2 para cortina, 3 para aire acondicionado).
     *   user_id: almacena el ID del usuario al que pertenece el dispositivo.
 
 #### Endpoints ⚙️ :
@@ -270,7 +270,7 @@ A continuación se listan los endpoints con los detalles de cada uno:
         [
             {
                 "id": 1,
-                "name": "Luz",
+                "name": "Lampara",
                 "description": "Living",
                 "state": 0,
                 "type": 1,
@@ -294,7 +294,7 @@ A continuación se listan los endpoints con los detalles de cada uno:
             },
             {
                 "id": 4,
-                "name": "Luz",
+                "name": "Lampara",
                 "description": "Cocina",
                 "state": 1,
                 "type": 1,
@@ -331,7 +331,7 @@ A continuación se listan los endpoints con los detalles de cada uno:
         [
             {
                 "id": 4,
-                "name": "Luz",
+                "name": "Lampara",
                 "description": "Cocina",
                 "state": 1,
                 "type": 1,

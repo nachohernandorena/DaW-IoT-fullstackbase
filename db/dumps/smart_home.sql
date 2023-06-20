@@ -61,10 +61,10 @@ CREATE TABLE IF NOT EXISTS `Devices` (
 --
 
 INSERT INTO `Devices` (`name`, `description`, `state`, `type`, `user_id`) VALUES
-('Luz', 'Living', 0, 1, 1), 
+('Lampara', 'Living', 0, 1, 1), 
 ('Cortina', 'Habitacion', 60, 2, 1), 
 ('Aire', 'Living', 24, 3, 1),
-('Luz', 'Cocina', 1, 1, 2), 
+('Lampara', 'Cocina', 1, 1, 2), 
 ('Cortina', 'Comedor', 20, 2, 2), 
 ('Aire', 'Comedor', 20, 3, 2);
 

@@ -4,8 +4,6 @@ class Device{
   public state: boolean;
   public description: string;
   public type: number;
-  public user_id: number;
-  frio: boolean;
-  
+  public user_id: number;  
 }
 

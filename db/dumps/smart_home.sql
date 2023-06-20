@@ -28,19 +28,14 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Table structure for table `Users`
 --
 
-CREATE TABLE IF NOT EXISTS `users` (
+CREATE TABLE IF NOT EXISTS `Users` (
   `id` INT AUTO_INCREMENT PRIMARY KEY,
   `email` VARCHAR(50) NOT NULL,
   `password` VARCHAR(255) NOT NULL
 );
-
--- Insertar un usuario de ejemplo
-INSERT INTO `users` (`id`, `email`, `password`) VALUES
-(1, 'admin@admin.com', 'secreto'),
-(2, 'user@user.com', '1234');
 
 --
 -- Table structure for table `Devices`
@@ -53,12 +48,18 @@ CREATE TABLE IF NOT EXISTS `Devices` (
   `state` INT NOT NULL,
   `type` INT NOT NULL,
   `user_id` INT NOT NULL,
-  FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
+  FOREIGN KEY (`user_id`) REFERENCES `Users` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `Devices`
 --
+
+-- Insertar un usuario de ejemplo
+INSERT INTO `Users` (`id`, `email`, `password`) VALUES
+(1, 'admin@admin.com', 'secreto'),
+(2, 'user@user.com', '1234');
+
 
 INSERT INTO `Devices` (`name`, `description`, `state`, `type`, `user_id`) VALUES
 ('Lampara', 'Living', 0, 1, 1), 
@@ -77,7 +78,7 @@ INSERT INTO `Devices` (`name`, `description`, `state`, `type`, `user_id`) VALUES
 --
 ALTER TABLE `Devices`
   ADD PRIMARY KEY (`id`),
-  ADD CONSTRAINT `fk_user_id` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
+  ADD CONSTRAINT `fk_user_id` FOREIGN KEY (`user_id`) REFERENCES `Users` (`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables

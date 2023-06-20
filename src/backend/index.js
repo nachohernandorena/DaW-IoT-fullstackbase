@@ -90,7 +90,7 @@ app.delete('/devices/:id', function(req, res, next) {
 app.post('/login', (req, res, next) => {
     const { email, password } = req.body;
   
-    utils.query('SELECT * FROM users WHERE email = ? AND password = ?', [email, password], function(err, response, field) {
+    utils.query('SELECT * FROM Users WHERE email = ? AND password = ?', [email, password], function(err, response, field) {
         if (err) {
             res.status(400).send(err);
             return;
@@ -107,7 +107,7 @@ app.post('/login', (req, res, next) => {
 app.get('/user_id', (req, res) => {
   const { email } = req.body;
 
-  utils.query('SELECT id FROM users WHERE email = ?', [email], function(err, response, field) {
+  utils.query('SELECT id FROM Users WHERE email = ?', [email], function(err, response, field) {
     if (err) {
       res.status(400).send(err);
       return;
@@ -128,7 +128,7 @@ app.get('/user_id', (req, res) => {
 app.post('/register', (req, res) => {
     const { email, password } = req.body;
   
-    utils.query('INSERT INTO users (email, password) VALUES (?, ?)', [email, password], function(err, response, field) {
+    utils.query('INSERT INTO Users (email, password) VALUES (?, ?)', [email, password], function(err, response, field) {
       if (err) {
         res.send(err).status(400);
         return;
@@ -138,10 +138,10 @@ app.post('/register', (req, res) => {
   });
 
 //Borrar usuario --- pendiente implementacion
-app.delete('/users/:id', (req, res) => {
+app.delete('/Users/:id', (req, res) => {
     const userId = req.params.id;
   
-    utils.query('DELETE FROM users WHERE id = ?', userId, function(err, response, field) {
+    utils.query('DELETE FROM Users WHERE id = ?', userId, function(err, response, field) {
       if (err) {
         res.send(err).status(400);
         return;

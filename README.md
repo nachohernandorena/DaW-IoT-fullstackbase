@@ -172,7 +172,7 @@ La SPA proporciona una experiencia de usuario fluida y receptiva, permitiendo a 
 
 #### Inicio de sesión de usuarios 👥
 
-Se ha implementado la opción de inicio de sesión utilizando el correo electrónico y la contraseña. En esta etapa, se han agregado dos usuarios: el usuario número 1 es `admin@admin.com` con la contraseña `secreto`, y el segundo usuario es `user@user.com` con la contraseña `1234`. queda como mejora a implementar la funcionalidad de alta, baja y modificación de usuarios.
+Se ha implementado la opción de inicio de sesión utilizando el correo electrónico y la contraseña. En esta etapa, se han agregado dos usuarios para testing: el usuario número 1 es `admin@admin.com` con la contraseña `secreto`, y el segundo usuario es `user@user.com` con la contraseña `1234`. queda como mejora a implementar la funcionalidad de alta, baja y modificación de usuarios.
 
 El correo electrónico del usuario con el que se ha iniciado sesión se muestra en la pantalla de dispositivos. Por el momento, al iniciar sesión con cualquiera de los usuarios, solo se muestran los dispositivos del usuario `admin@admin.com`:
 
